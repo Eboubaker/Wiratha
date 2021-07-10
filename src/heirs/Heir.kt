@@ -1,0 +1,4 @@
+package heirs
+
+class Heir {
+}
