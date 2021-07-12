@@ -27,7 +27,7 @@ class GrandFather: Heir(), GetsRemaining {
     }
 
     override fun calculateRemaining(remaining: Divider, heirs: List<Heir>) {
-        if(getsRemaining && remaining.dividened < remaining.divider)
+        if(getsRemaining && remaining.dividened <= remaining.divider)
         {
             share = remaining
         }

@@ -37,7 +37,7 @@ class Sister: Heir(), GetsRemaining {
     }
 
     override fun calculateRemaining(remaining: Divider, heirs: List<Heir>) {
-        if(getsRemaining && remaining.dividened < remaining.divider)
+        if(getsRemaining && remaining.dividened <= remaining.divider)
         {
             var sistersCount = heirs.count { it is Sister }
             var brothersCount = heirs.count{ it is Brother}

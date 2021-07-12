@@ -26,6 +26,13 @@ abstract class Heir {
 
     fun getNumericId(): Int
     {
-        return id.replace("`", "-").toInt()
+        var id = id.replace('`', '-')
+        var add8 = if(id[0] == '#') 8 else 0
+        id = id.replace("#", "")
+        return id.toInt() + add8
+    }
+
+    override fun toString(): String {
+        return "$share ${if (getsRemaining) "Moassab" else ""}"
     }
 }

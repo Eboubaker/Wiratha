@@ -13,7 +13,7 @@ fun List<Divider>.lcm(): Int
 
     return ans;
 }
-fun List<Divider>.toLcm(lcm: Int = lcm())
+fun List<Divider>.toLcm(lcm: Int = lcm()): List<Divider>
 {
     forEach {
         if(lcm > it.divider) {
@@ -22,6 +22,7 @@ fun List<Divider>.toLcm(lcm: Int = lcm())
             it.divider *= multiplier
         }
     }
+    return this
 }
 fun List<Divider>.sum(): Divider
 {

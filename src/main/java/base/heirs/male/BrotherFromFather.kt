@@ -27,7 +27,7 @@ class BrotherFromFather: Heir(), GetsRemaining {
     }
 
     override fun calculateRemaining(remaining: Divider, heirs: List<Heir>) {
-        if(getsRemaining && remaining.dividened < remaining.divider)
+        if(getsRemaining && remaining.dividened <= remaining.divider)
         {
             var sistersFromFatherCount = heirs.count { it is SisterFromFather }
             var brothersFromFatherCount = heirs.count{ it is BrotherFromFather}

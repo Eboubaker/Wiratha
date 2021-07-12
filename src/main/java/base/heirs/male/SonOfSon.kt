@@ -23,7 +23,7 @@ class SonOfSon: Heir(), GetsRemaining {
     }
 
     override fun calculateRemaining(remaining: Divider, heirs: List<Heir>) {
-        if(getsRemaining && remaining.dividened < remaining.divider)
+        if(getsRemaining && remaining.dividened <= remaining.divider)
         {
             var daughtersOfSonCount = heirs.count { it is DaughterOfSon }
             var sonsOfSonCount = heirs.count{ it is SonOfSon}
