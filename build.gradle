@@ -1,0 +1,17 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
+    id 'application'
+}
+repositories.mavenCentral()
+group = 'groupId'
+version = '1.0'
+description = 'Wiratha'
+java.sourceCompatibility = JavaVersion.VERSION_1_8
+sourceSets.main.kotlin.srcDirs += 'src/main/kotlin'
+application.mainClass = 'base.MainKt'
+run.standardInput = System.in
+jar.manifest.attributes.put('Main-Class', 'base.MainKt')
+dependencies {
+    implementation 'com.massisframework:j-text-utils:0.3.4'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
+}
