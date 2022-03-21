@@ -53,3 +53,15 @@ ________________________
 | Son    | 7/24 | 29.16%|
 | Mother | 4/24 | 16.66%|
 ```
+- Husband died and left Wife 1 sister a son and 2 daughters
+```
+family: `1`7`2`22
+_________________________
+| heir    | share| share%|
+|========================|
+| Son     | 14/32| 43.75%|
+| Daughter| 7/32 | 21.87%|
+| Daughter| 7/32 | 21.87%|
+| Wife    | 4/32 | 12.5% |
+| Sister  | 0/32 | 0%    |
+```
