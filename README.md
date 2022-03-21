@@ -11,24 +11,28 @@ Family members codes:
 "4" -> Father
 "5" -> GrandFather
 "6" -> Brother
-"7" -> BrotherFromFather
-"8" -> BrotherFromMother
+"7" -> BrotherFromFather (not the same mother)
+"8" -> BrotherFromMother (not the same father)
 "`1" -> Wife
 "`2" -> Daughter
 "`3" -> DaughterOfSon
 "`4" -> Mother
-"`5" -> GrandMotherFromFather
-"`6" -> GrandMotherFromMother
+"`5" -> GrandMotherFromFather (mother of father)
+"`6" -> GrandMotherFromMother (mother of mother)
 "`7" -> Sister
-"`8" -> SisterFromFather
-"`9" -> SisterFromMother
+"`8" -> SisterFromFather (not the same mother)
+"`9" -> SisterFromMother (not the same father)
 "#1" -> SonOfBrother
-"#2" -> SonOfBrotherFromFather
-"#3" -> BrotherOfFather
-"#4" -> BrotherOfFatherFromFather
-"#5" -> SonOfBrotherOfFather
-"#6" -> SonOfBrotherOfFatherFromFather
+"#2" -> SonOfBrotherFromFather (son of 7)
+"#3" -> BrotherOfFather (uncle)
+"#4" -> BrotherOfFatherFromFather (uncle and father don't share the same mother)
+"#5" -> SonOfBrotherOfFather (son of #3)
+"#6" -> SonOfBrotherOfFatherFromFather (son of #4)
 ```
+> all members are relative to the one who died (Husband or Wife), for example `` `7`` is sister of Husband if Husband is the heir, and is sister of Wife if the Wife is the heir.
+ 
+> any member that is not listed will always get 0 for example SonOfDaughter
+
 
 Examples:
 - Husband died and left Wife 1 sister and 2 daughters
