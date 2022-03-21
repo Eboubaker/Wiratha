@@ -1,37 +1,47 @@
+## تشغيل سريع
+تحتاج إلي jdk8 أو أعلى  
+أكتب في cmd
 ```
 git clone https://github.com/Eboubaker/Wiratha
 cd Wiratha
 .\gradlew run
 ```
-Family members codes:
-```
-"1" -> Husband
-"2" -> Son
-"3" -> SonOfSon
-"4" -> Father
-"5" -> GrandFather
-"6" -> Brother
-"7" -> BrotherFromFather
-"8" -> BrotherFromMother
-"`1" -> Wife
-"`2" -> Daughter
-"`3" -> DaughterOfSon
-"`4" -> Mother
-"`5" -> GrandMotherFromFather
-"`6" -> GrandMotherFromMother
-"`7" -> Sister
-"`8" -> SisterFromFather
-"`9" -> SisterFromMother
-"#1" -> SonOfBrother
-"#2" -> SonOfBrotherFromFather
-"#3" -> BrotherOfFather
-"#4" -> BrotherOfFatherFromFather
-"#5" -> SonOfBrotherOfFather
-"#6" -> SonOfBrotherOfFatherFromFather
-```
+## كيفية الإستعمال 
+عليك بإدخال كامل ارقام الورثة في سطر واحد, يمكن تكرار الأرقام اكثر من مره في حالة وجود اكثر من وارث من نفس القرابة, يمكن أيضا التكرار عن طريق إضافة رمز `+` عدة مرات عدد الزيادة المرغوبة بعد رقم القريب 
 
-Examples:
-- Husband died and left Wife 1 sister and 2 daughters
+إخراج البرنامج يكون باللغة اللاتينية بسب عدم قدرة cmd في إضهار الأحرف العربية بطريقة صحيحة
+
+## أرقام الورثة
+علاقة القرابة هي بين الميت وهذا القريب, مثال الإبن هنا نقصد به إبن الميت(المورث) 
+```
+"1" -> Husband الزوج
+"2" -> Son الإبن
+"3" -> SonOfSon إبن الإبن(حفيد)
+"4" -> Father الأب
+"5" -> GrandFather الجد
+"6" -> Brother الأخ
+"7" -> BrotherFromFather  الأخ الأبوي (ليس لهم نفس الأم)
+"8" -> BrotherFromMotherالأخ من الأم (ليس لهم نفس الأب)
+"`1" -> Wife الزوجة
+"`2" -> Daughter البنت
+"`3" -> DaughterOfSon إين البنت (الحفيد)
+"`4" -> Mother الأم
+"`5" -> GrandMotherFromFather الجدة (أم الأب)
+"`6" -> GrandMotherFromMother الجدة (أم الأم)
+"`7" -> Sister الأخت
+"`8" -> SisterFromFather الأخت الأبوية (ليس لهم نفس الأم)
+"`9" -> SisterFromMother الأخت من الأم (ليس لهم نفس الأب)
+"#1" -> SonOfBrother إبن الأخ
+"#2" -> SonOfBrotherFromFather إبن الأخ الأبوي (رقم "7")
+"#3" -> BrotherOfFather العم (أخ الأب)
+"#4" -> BrotherOfFatherFromFather الأخ الأبوي لأب المورث (أخ الأب لكن ليسو من نفس الأم)
+"#5" -> SonOfBrotherOfFather إين العم (إبن أخ الأب)
+"#6" -> SonOfBrotherOfFatherFromFather إبن الأخ الأبوي لأب المورث (إبن رقم "4#")
+```
+> كل الأقرباء الباقون ليسو من الورثة المستحقين
+
+# أمثلة
+- مات الزوج وترك زوجة, أخت, وبنتان
 ```
 family: `1`7`2`2
 _________________________
@@ -42,7 +52,7 @@ _________________________
 | Daughter| 8/24 | 33.33%|
 | Daughter| 8/24 | 33.33%|
 ```
-- Wife died and left Husband 2 sons and mother
+- ماتت الزوجة وتركت الزوج وإبنين, وأمها
 ```
 family: 122`4
 ________________________
@@ -53,3 +63,21 @@ ________________________
 | Son    | 7/24 | 29.16%|
 | Mother | 4/24 | 16.66%|
 ```
+- مات شخص وترك زوجة و إبن وأخت و بنتان
+```
+family: `1`7`2`22
+_________________________
+| heir    | share| share%|
+|========================|
+| Son     | 14/32| 43.75%|
+| Daughter| 7/32 | 21.87%|
+| Daughter| 7/32 | 21.87%|
+| Wife    | 4/32 | 12.5% |
+| Sister  | 0/32 | 0%    |
+```
+
+# شكر
+البرنامج ساهم في التحقق منه مدرسة الإخلاص في الجلفة وفضيلة [الشيخ أبو محمد الجابري سالت](https://www.facebook.com/ElcheikhElJabiri)
+
+# المصدر المسعمل.
+![image](https://user-images.githubusercontent.com/37766821/159339990-6993ce9b-cbc7-43c2-842a-d4e7038cde06.png)
