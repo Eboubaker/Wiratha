@@ -1,4 +1,5 @@
 #### Quick start
+requires jdk8 or up
 ```
 git clone https://github.com/Eboubaker/Wiratha
 cd Wiratha
