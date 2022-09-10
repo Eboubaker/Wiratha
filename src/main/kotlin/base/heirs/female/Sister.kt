@@ -26,7 +26,7 @@ class Sister: Heir(), GetsRemaining {
             innervationType = InterventionType.CAUSE_OF_OTHERS
         }else{
             val sistersCount = heirs.count { it is Sister }
-            share = if(sistersCount > 1)
+            share = if(sistersCount == 1)
                 Half()
             else
                 Divider(2, 3 * sistersCount)
