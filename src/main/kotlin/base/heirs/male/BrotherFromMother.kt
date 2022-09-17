@@ -1,9 +1,13 @@
 package base.heirs.male
 
+import base.divider.Divider
 import base.divider.Sixth
 import base.divider.Third
 import base.heirs.Heir
 import base.heirs.containsBranch
+import base.heirs.female.GrandMotherFromFather
+import base.heirs.female.GrandMotherFromMother
+import base.heirs.female.Mother
 
 class BrotherFromMother : Heir() {
     companion object {
@@ -20,9 +24,20 @@ class BrotherFromMother : Heir() {
     }
 
     override fun calculateShare(heirs: List<Heir>) {
-        share = if (heirs.count { it is BrotherFromMother } > 1)
-            Third()
-        else
+        val selfCount = heirs.count { it is BrotherFromMother }
+        val isHimaria = heirs.any { it is Husband }
+                && heirs.any { it is Mother || it is GrandMotherFromMother || it is GrandMotherFromFather }
+                && heirs.any { it is Brother }
+                && heirs.count { it is BrotherFromMother } > 1
+        val getsRemainingBrothers = heirs.count { it is Brother }
+        share = if (isHimaria && selfCount > 1) {
+            if (getsRemainingBrothers > 0) {
+                Third().multiply(Divider(1, selfCount + getsRemainingBrothers))
+            } else {
+                Third().multiply(Divider(1, selfCount))
+            }
+        } else {
             Sixth()
+        }
     }
 }

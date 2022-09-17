@@ -14,4 +14,10 @@ jar.manifest.attributes.put('Main-Class', 'base.MainKt')
 dependencies {
     implementation 'com.massisframework:j-text-utils:0.3.4'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+test {
+    useJUnitPlatform()
 }

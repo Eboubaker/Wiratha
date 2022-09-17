@@ -29,6 +29,6 @@ fun idToHeir(id: String): Heir
         "#4" -> BrotherOfFatherFromFather()
         "#5" -> SonOfBrotherOfFather()
         "#6" -> SonOfBrotherOfFatherFromFather()
-        else -> error("Wrong id")
+        else -> ValidationException.error("Wrong id $id")
     }
 }
